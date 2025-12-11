@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Notícias - Página Inicial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-5"></div>        
+        <header class="text-center mb-5">
+            <h1 class="fw-bold">API de Notícias</h1>
+            <p class="text-muted">A API permite buscar, inserir, atualizar e excluir notícias armazenadas no MongoDB
+                Atlas.</p>
+        </header>
+
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Endpoints Disponíveis</h4>
+            </div>
+            <div class="card-body">
+
+                <!-- GETs -->
+                <h5 class="fw-bold mt-3">🔍 Buscar Notícias (GET)</h5>
+                <ul>
+                    <li><code>GET /noticias</code> — Retorna todas as notícias.</li>
+                    <li><code>GET /noticias/id/:id</code> — Retorna uma notícia específica pelo ID.</li>
+                    <li><code>GET /noticias/tiponoticia/:tipo</code> — Retorna notícias filtradas por tipo.</li>
+                </ul>
+
+                <!-- POST -->
+                <h5 class="fw-bold mt-4">📝 Inserir Notícia (POST)</h5>
+                <p><code>POST /postnoticias</code></p>
+                <p>Enviar no corpo da requisição <strong>JSON</strong>:</p>
+
+                <pre>{
+  "titulo": "Título da notícia",
+  "conteudo": "Conteúdo da notícia",
+  "tipo": "categoria"
+}</pre>
+
+                <!-- PUT -->
+                <h5 class="fw-bold mt-4">✏ Atualizar Notícia (PUT)</h5>
+                <p><code>PUT /putnoticias</code></p>
+                <p>Enviar no corpo da requisição <strong>JSON</strong>:</p>
+
+                <pre>{
+  "_id": "ID da notícia",
+  "titulo": "Novo título",
+  "conteudo": "Novo conteúdo",
+  "tipo": "nova categoria"
+}</pre>
+
+                <!-- DELETE -->
+                <h5 class="fw-bold mt-4">🗑 Deletar Notícia (DELETE)</h5>
+                <p><code>DELETE /delnoticas</code></p>
+                <p>Enviar no corpo da requisição <strong>JSON</strong>:</p>
+
+                <pre>{
+  "_id": "ID da notícia"
+}</pre>
+
+            </div>
+        </div>
+
+        <footer class="text-center text-muted mt-4">
+            <p>API desenvolvida com Node.js, Express e MongoDB Atlas.</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
